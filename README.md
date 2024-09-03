@@ -39,6 +39,7 @@ Why Domain-Driven Design?
 - Enfoque en el negocio: DDD facilita que el código refleje el negocio real, haciendo que el software sea más intuitivo y adaptable a los cambios de negocio.
 - Mantenimiento: Facilita el mantenimiento a largo plazo, ya que cada capa tiene una responsabilidad clara y delimitada.
 
+```bash
 project/
 │
 ├── src/
@@ -76,3 +77,4 @@ project/
 ├── .gitignore # Archivos a ignorar por git
 ├── package.json # Dependencias y scripts del proyecto
 └── README.md # Documentación del proyecto
+```

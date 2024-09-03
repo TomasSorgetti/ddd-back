@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-
+const routes = require("./infrastructure/http/routes/routes");
 const app = express();
 
 const originDomains = ["http://localhost:3000", "http://127.0.0.1:3000"];
@@ -21,8 +21,6 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use("/api", routes);
 
 module.exports = app;
