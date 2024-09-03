@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const routes = require("./infrastructure/http/routes/routes");
+const routes = require("./infrastructure/http/routes/index.routes");
 const app = express();
 
 const originDomains = ["http://localhost:3000", "http://127.0.0.1:3000"];

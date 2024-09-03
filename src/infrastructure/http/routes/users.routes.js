@@ -1,18 +1,14 @@
 const { Router } = require("express");
+const UserService = require("../../../domain/user/services/user.service");
+const UserController = require("../controllers/user.controller");
+const SequelizeUserRepository = require("../../repositories/Sequelize.user.repository");
 
-const usersRoutes = Router();
+const userRepository = new SequelizeUserRepository();
+const userService = new UserService(userRepository);
+const userController = new UserController(userService);
 
-usersRoutes.get("/", (req, res) => {
-  res.send("Get users");
-});
-usersRoutes.post("/", (req, res) => {
-  res.send("Post users");
-});
-usersRoutes.put("/", (req, res) => {
-  res.send("Put users");
-});
-usersRoutes.delete("/", (req, res) => {
-  res.send("Delete users");
-});
+const userRouter = Router();
 
-module.exports = usersRoutes;
+userRouter.get("/:id", (req, res) => userController.getUserById(req, res));
+
+module.exports = userRouter;

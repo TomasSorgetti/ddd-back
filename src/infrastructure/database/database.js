@@ -10,6 +10,7 @@ const sequelize = new Sequelize(
     dialect: config.dbConfig.db_dialect,
   }
 );
+module.exports = { sequelize };
 
 require("./models/user.model");
 require("./associations");
@@ -25,11 +26,12 @@ sequelize
 
 async function syncDatabase() {
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: false });
     console.log("Database & tables synchronized successfully.");
   } catch (err) {
     console.error("Unable to sync the database:", err);
     throw err; // Lanza el error para que el servidor no inicie si la sincronización falla
   }
 }
-module.exports = { sequelize, syncDatabase };
+
+module.exports.syncDatabase = syncDatabase;
