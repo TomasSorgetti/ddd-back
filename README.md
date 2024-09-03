@@ -1,17 +1,8 @@
 # How to start
 
-First check if you have installed node and npm, if dont, install first
-
-```bash
-node --version
-npm --version
-```
-
-If you have allready install node and npm, go to your folder with the bash and clone the repository
-
 ```bash
 cd your_folder
-git clone project_github
+git clone https://github.com/TomasSorgetti/ddd-back.git
 ```
 
 Create a .env file in root folder with your credentials, check the .env.example file to copy the variables.

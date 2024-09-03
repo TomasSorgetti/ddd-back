@@ -1,8 +1,5 @@
-const  serverConfig  = require("./server.config.js");
-
-
 const config = {
-  serverConfig: serverConfig,
+  serverConfig: require("./server.config.js"),
 };
 
-module.exports =  config 
+module.exports = config;
